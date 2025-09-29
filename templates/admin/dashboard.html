@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .menu-admin {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            list-style: none;
+            padding: 0;
+        }
+        .menu-admin li {
+            list-style: none;
+        }
+        .menu-admin a {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .menu-admin a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Panel de Administración</h1>
+    <ul class="menu-admin">
+        <li><a href="{{ url_for('agregar') }}">➕ Agregar producto</a></li>
+        <li><a href="{{ url_for('eliminar') }}">🗑 Eliminar producto</a></li>
+        <li><a href="{{ url_for('editar') }}">✏ Editar producto</a></li>
+        <li><a href="{{ url_for('menu') }}">📋 Ver menú</a></li>
+    </ul>
+</body>
+</html>

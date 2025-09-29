@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menú del Restaurante</title>
+</head>
+<body>
+    <h1>Menú del Restaurante</h1>
+
+    <ul>
+        {% for id, producto, precio in productos %}
+            <li>{{ id }} - {{ producto }}: ${{ precio }}</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{{ url_for('agregar') }}">Agregar Producto</a> |
+    <a href="{{ url_for('index') }}">Volver al inicio</a>
+</body>
+</html>

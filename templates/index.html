@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Restaurante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 15px 0;
+        }
+        h1 {
+            margin: 0;
+        }
+        main {
+            margin-top: 50px;
+        }
+        a {
+            display: inline-block;
+            margin: 15px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Nuestro Restaurante</h1>
+    </header>
+
+    <main>
+        <p>Selecciona una opción para continuar:</p>
+        <a href="{{ url_for('menu') }}">📋 Ver Menú</a>
+        <a href="{{ url_for('admin_dashboard') }}">⚙️ Panel de Administración</a>
+    </main>
+</body>
+</html>

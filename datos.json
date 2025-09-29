@@ -1,0 +1,26 @@
+
+{
+    "menu": {
+        "hamburguesa": 5200,
+        "hotdog": 2500,
+        "pizza": 5000,
+        "coca cola": 3000,
+        "cerveza": 2500,
+        "nachos con queso": 6000,
+        "empanadas": 1000
+    },
+    "registros": [
+        "pizza,2",
+        "Cerveza,3",
+        "empanadas,5",
+        "Pizza,1",
+        "hotdog,2",
+        "coca cola,1",
+        "coca-cola,2",
+        "nachos con queso,1",
+        "empanada,2",
+        "agua,1",
+        "pizza,dos",
+        "  PIZZA , 3  "
+    ]
+}

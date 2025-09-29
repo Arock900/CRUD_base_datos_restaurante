@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Producto</title>
+</head>
+<body>
+    <h1>Editar Producto</h1>
+
+    {% if productos %}
+        <ul>
+        {% for producto in productos %}
+            <li>
+                <form action="{{ url_for('editar') }}" method="POST" style="display:inline;">
+                    <input type="hidden" name="producto_id" value="{{ producto[0] }}">
+                    <input type="text" name="nombre" value="{{ producto[1] }}" required>
+                    <input type="number" name="precio" value="{{ producto[2] }}" required step="0.01">
+                    <button type="submit">Guardar cambios</button>
+                </form>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay productos disponibles para editar.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('admin_dashboard') }}">Volver al panel</a>
+</body>
+</html>

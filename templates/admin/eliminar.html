@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Producto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .flash-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 10px;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            width: 50%;
+            margin: 15px auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #c82333;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .empty-message {
+            color: #888;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eliminar Producto</h1>
+
+    <!-- Mensajes Flash -->
+    {% with mensajes = get_flashed_messages(with_categories=true) %}
+        {% if mensajes %}
+            <div class="flash-message">
+                {% for categoria, mensaje in mensajes %}
+                    <p>{{ mensaje }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Lista de productos -->
+    {% if productos %}
+        <ul>
+            {% for producto in productos %}
+                <li>
+                    <span>{{ producto[1] }} - ${{ producto[2] }}</span>
+                    <form action="{{ url_for('eliminar') }}" method="POST" style="display:inline;">
+                        <input type="hidden" name="producto_id" value="{{ producto[0] }}">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="empty-message">No hay productos en el menú.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('admin_dashboard') }}">Volver al panel</a>
+</body>
+</html>
