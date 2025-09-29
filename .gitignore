@@ -1,0 +1,14 @@
+# Ignorar bases de datos
+*.db
+
+# Ignorar carpetas de caché de Python
+__pycache__/
+*.pyc
+
+# Archivos temporales de sistema
+.DS_Store
+Thumbs.db
+
+# Configuración local
+.env
+*.sqlite3
